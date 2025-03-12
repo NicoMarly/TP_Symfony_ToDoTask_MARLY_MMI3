@@ -6,6 +6,7 @@ use App\Repository\TaskRepository;
 use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: TaskRepository::class)]
 class Task
@@ -13,18 +14,23 @@ class Task
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['task:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['task:read'])]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['task:read'])]
     private ?string $description = null;
 
     #[ORM\Column]
+    #[Groups(['task:read'])]
     private ?bool $status = null;
 
     #[ORM\Column]
+    #[Groups(['task:read'])]
     private ?DateTimeImmutable $created_at = null;
 
     public function __construct()
