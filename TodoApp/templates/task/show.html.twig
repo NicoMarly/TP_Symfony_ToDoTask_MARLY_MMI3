@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails de la tâche{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="mb-4">Détails de la tâche</h1>
+
+    <div class="card shadow-sm p-4">
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>ID</th>
+                    <td>{{ task.id }}</td>
+                </tr>
+                <tr>
+                    <th>Titre</th>
+                    <td>{{ task.title }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ task.description }}</td>
+                </tr>
+                <tr>
+                    <th>État</th>
+                    <td>
+                        <span class="badge {{ task.status ? 'bg-success' : 'bg-warning' }}">
+                            {{ task.status ? 'Terminé' : 'En cours' }}
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Date de création</th>
+                    <td>{{ task.createdAt ? task.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-3">
+        <a href="{{ path('app_task_index') }}" class="btn btn-secondary">Retour à la liste</a>
+        <a href="{{ path('app_task_edit', {'id': task.id}) }}" class="btn btn-info">Modifier</a>
+        {{ include('task/_delete_form.html.twig') }}
+    </div>
+</div>
+{% endblock %}

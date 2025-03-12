@@ -1,0 +1,22 @@
+{{ form_start(form, {'attr': {'class': 'needs-validation'}}) }}
+
+    <div class="mb-3">
+        {{ form_label(form.title, 'Titre', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.description, 'Description', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.description, {'attr': {'class': 'form-control', 'rows': '4'}}) }}
+    </div>
+
+    <div class="form-check mb-3">
+        {{ form_widget(form.status, {'attr': {'class': 'form-check-input'}}) }}
+        {{ form_label(form.status, 'Tâche terminée', {'label_attr': {'class': 'form-check-label'}}) }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        <i class="bi bi-save"></i> {{ button_label|default('Sauvegarder') }}
+    </button>
+
+{{ form_end(form) }}
