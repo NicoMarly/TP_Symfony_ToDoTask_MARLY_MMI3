@@ -19,7 +19,7 @@ Une application web en **Symfony** permettant de **gérer des tâches** avec une
 
 ### 1 **Cloner le projet**
 
-git clone https://github.com/VOTRE-NOM-UTILISATEUR/tache-api.git
+git clone https://github.com/NicoMarly/TP_Symfony_ToDoTask_MARLY_MMI3.git
 cd tache-api
 
 ### 2 Installer les dépendances
