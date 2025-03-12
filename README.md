@@ -28,7 +28,7 @@ composer install
 
 ### 3 Configurer la base de données
 
-DATABASE_URL="mysql://user:password@127.0.0.1:3306/tache_db"
+DATABASE_URL="mysql://root@127.0.0.1:3306/TP_Symfony_ToDoTask_MARLY_MMI3?serverVersion=8.0.32&charset=utf8mb4"
 Créer la base de données et exécuter les migrations :
 
 php bin/console doctrine:database:create
