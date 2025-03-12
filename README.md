@@ -19,31 +19,31 @@ Une application web en **Symfony** permettant de **gérer des tâches** avec une
 
 ### 1 **Cloner le projet**
 
-git clone https://github.com/NicoMarly/TP_Symfony_ToDoTask_MARLY_MMI3.git
-cd tache-api
+    git clone https://github.com/NicoMarly/TP_Symfony_ToDoTask_MARLY_MMI3.git
+    cd tache-api
 
 ### 2 Installer les dépendances
 
-composer install
+    composer install
 
 ### 3 Configurer la base de données
 
-DATABASE_URL="mysql://root@127.0.0.1:3306/TP_Symfony_ToDoTask_MARLY_MMI3?serverVersion=8.0.32&charset=utf8mb4"
-Créer la base de données et exécuter les migrations :
+    DATABASE_URL="mysql://root@127.0.0.1:3306/TP_Symfony_ToDoTask_MARLY_MMI3?serverVersion=8.0.32&charset=utf8mb4"
+    Créer la base de données et exécuter les migrations :
 
-php bin/console doctrine:database:create
-php bin/console doctrine:migrations:migrate
+    php bin/console doctrine:database:create
+    php bin/console doctrine:migrations:migrate
 
 ### 4 Lancer le serveur
 
-symfony server:start
-L'application sera accessible sur http://127.0.0.1:8000.
+        symfony server:start
+        L'application sera accessible sur http://127.0.0.1:8000.
 
 ### API REST - Documentation
 
 ## 1. Récupérer toutes les tâches
 
-GET /api/tasks
+        GET /api/tasks
 
 # Réponse :
 
@@ -73,8 +73,8 @@ GET /api/tasks/{id}
 
 ## 3. Créer une tâche
 
-POST /api/tasks
-Content-Type: application/json
+    POST /api/tasks
+    Content-Type: application/json
 
 # Corps de la requête :
 
@@ -96,8 +96,8 @@ Content-Type: application/json
 
 ## 4. Modifier une tâche
 
-PUT /api/tasks/{id}
-Content-Type: application/json
+    PUT /api/tasks/{id}
+    Content-Type: application/json
 
 # Corps de la requête :
 
@@ -117,7 +117,7 @@ Content-Type: application/json
 
 ## 5. Supprimer une tâche
 
-DELETE /api/tasks/{id}
+    DELETE /api/tasks/{id}
 
 # Réponse :
 
